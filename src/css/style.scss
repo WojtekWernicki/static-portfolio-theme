@@ -98,7 +98,8 @@ body {
 
 .section {
     background-color: $primary-color;
-    min-height: 100vh;
+    min-height: calc(100vh - 50px);
+    padding-top: 50px;
     color: $primary-color-text;
 }
 
@@ -113,9 +114,14 @@ body {
     width: 100%;
 }
 
+.center-ver {
+    @include flexbox();
+    @include flexbox-center-hor-ver();
+}
+
 /* 5. IDs */
 
-#top {
+#top .parallax {
     background-image: url('../img/triangle.jpg');
     @include flexbox-direction(column);
     
@@ -129,12 +135,47 @@ body {
     }
 }
 
-#wspolpraca {
+#o-mnie {
+    @include flexbox();
+    @include flexbox-center-hor-ver();
+        
+    line-height: 1.25rem;
+    
+    ul li {
+        margin-bottom: 1.5rem;
+    }
+    
+    a {
+        color: $primary-color-text;
+        display: inline-block;
+        margin-right: 50px;
+        text-decoration: none;
+        
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+    
+    i {
+        transition: all 0.75s;
+        
+        &:hover {
+            color: $primary-text-color;
+            transform: scale(1.25);            
+        }
+    }
+    
+    i + small {
+        display: block;
+    }
+}
+
+#wspolpraca .parallax {
     background-image: url('../img/wspolpraca.jpg');
     color: $primary-text-color;
     
     i {
-        color: $accent-color;
+        color: $primary-text-color;
     }
 }
 

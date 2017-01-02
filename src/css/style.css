@@ -84,7 +84,8 @@ h6 small {
 
 .section {
   background-color: #03A9F4;
-  min-height: 100vh;
+  min-height: calc(100vh - 50px);
+  padding-top: 50px;
   color: #FFFFFF;
 }
 
@@ -104,12 +105,22 @@ h6 small {
   width: 100%;
 }
 
+.center-ver {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* 5. IDs */
-#top {
+#top .parallax {
   background-image: url("../img/triangle.jpg");
   flex-direction: column;
 }
-#top img {
+#top .parallax img {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -120,12 +131,45 @@ h6 small {
   width: 200px;
 }
 
-#wspolpraca {
+#o-mnie {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.25rem;
+}
+#o-mnie ul li {
+  margin-bottom: 1.5rem;
+}
+#o-mnie a {
+  color: #FFFFFF;
+  display: inline-block;
+  margin-right: 50px;
+  text-decoration: none;
+}
+#o-mnie a:last-of-type {
+  margin-right: 0;
+}
+#o-mnie i {
+  transition: all 0.75s;
+}
+#o-mnie i:hover {
+  color: #212121;
+  transform: scale(1.25);
+}
+#o-mnie i + small {
+  display: block;
+}
+
+#wspolpraca .parallax {
   background-image: url("../img/wspolpraca.jpg");
   color: #212121;
 }
-#wspolpraca i {
-  color: #8BC34A;
+#wspolpraca .parallax i {
+  color: #212121;
 }
 
 /* 6. MEDIA QUERIES */
