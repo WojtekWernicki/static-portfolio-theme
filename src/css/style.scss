@@ -1,13 +1,14 @@
 /* 0. IMPORT */
 
 @import 'palette';
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Lato|Ubuntu&subset=latin-ext');
 
 /* 1. MIXINS */
 
 @mixin anchor-color($val) {
     a, a:hover {
         color: $val;
+        text-decoration: none;
     }
 }
 
@@ -53,7 +54,8 @@ body {
 }
 
 @for $i from 1 through 6 {
-    h#{$i} {
+    h#{$i} {        
+        font-family: 'Ubuntu', sans-serif;
         margin-bottom: 25px;
         
         small {
@@ -119,6 +121,18 @@ body {
     @include flexbox-center-hor-ver();
 }
 
+.portfolio-item {
+    background-color: $divider-color;
+    margin-bottom: 30px;
+    padding: 10px;
+    
+    @include anchor-color($primary-text-color);
+    
+    img {
+        width: 100%;
+    }
+}
+
 /* 5. IDs */
 
 #top .parallax {
@@ -149,7 +163,6 @@ body {
         color: $primary-color-text;
         display: inline-block;
         margin-right: 50px;
-        text-decoration: none;
         
         &:last-of-type {
             margin-right: 0;
@@ -170,6 +183,12 @@ body {
     }
 }
 
+#portfolio {
+    .parallax {
+        @include flexbox-direction(column);
+    }
+}
+
 #wspolpraca .parallax {
     background-image: url('../img/wspolpraca.jpg');
     color: $primary-text-color;
@@ -177,6 +196,10 @@ body {
     i {
         color: $primary-text-color;
     }
+}
+
+#skill .parallax {
+    background-image: url('../img/computer.jpg');
 }
 
 /* 6. MEDIA QUERIES */
