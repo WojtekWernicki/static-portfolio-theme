@@ -133,6 +133,13 @@ body {
     }
 }
 
+.blue-frame {
+    color: $primary-color-text;
+    background-color: rgba($primary-color, 0.5);
+    overflow: hidden;
+    padding: 20px;
+}
+
 /* 5. IDs */
 
 #top .parallax {
@@ -163,6 +170,7 @@ body {
         color: $primary-color-text;
         display: inline-block;
         margin-right: 50px;
+        text-decoration: none;
         
         &:last-of-type {
             margin-right: 0;
@@ -180,6 +188,7 @@ body {
     
     i + small {
         display: block;
+        margin-top: 10px;
     }
 }
 
@@ -191,15 +200,29 @@ body {
 
 #wspolpraca .parallax {
     background-image: url('../img/wspolpraca.jpg');
-    color: $primary-text-color;
-    
-    i {
-        color: $primary-text-color;
-    }
 }
 
 #skill .parallax {
+    @include flexbox-direction(column);
+    
     background-image: url('../img/computer.jpg');
+    
+    #languages {
+        @include flexbox();
+        @include flexbox-direction(column);
+        
+        ul {
+            padding-left: 0;
+            width: 100%;
+            
+            li {
+                display: block;
+                float: left;
+                text-align: center;
+                width: calc(100% / 3);
+            }
+        }
+    }
 }
 
 /* 6. MEDIA QUERIES */

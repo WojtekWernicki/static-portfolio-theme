@@ -135,6 +135,13 @@ h6 small {
   width: 100%;
 }
 
+.blue-frame {
+  color: #FFFFFF;
+  background-color: rgba(3, 169, 244, 0.5);
+  overflow: hidden;
+  padding: 20px;
+}
+
 /* 5. IDs */
 #top .parallax {
   background-image: url("../img/triangle.jpg");
@@ -168,6 +175,7 @@ h6 small {
   color: #FFFFFF;
   display: inline-block;
   margin-right: 50px;
+  text-decoration: none;
 }
 #o-mnie a:last-of-type {
   margin-right: 0;
@@ -181,6 +189,7 @@ h6 small {
 }
 #o-mnie i + small {
   display: block;
+  margin-top: 10px;
 }
 
 #portfolio .parallax {
@@ -189,14 +198,29 @@ h6 small {
 
 #wspolpraca .parallax {
   background-image: url("../img/wspolpraca.jpg");
-  color: #212121;
-}
-#wspolpraca .parallax i {
-  color: #212121;
 }
 
 #skill .parallax {
+  flex-direction: column;
   background-image: url("../img/computer.jpg");
+}
+#skill .parallax #languages {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+}
+#skill .parallax #languages ul {
+  padding-left: 0;
+  width: 100%;
+}
+#skill .parallax #languages ul li {
+  display: block;
+  float: left;
+  text-align: center;
+  width: calc(100% / 3);
 }
 
 /* 6. MEDIA QUERIES */
