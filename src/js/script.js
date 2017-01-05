@@ -20,7 +20,7 @@ $(document).ready(function () {
         });
     });*/
     
-    /*$("#submit").click(function() {
+    $("#submit").click(function() {
        $.ajax({
            type: "POST",
            url: "sendmail.php",
@@ -36,5 +36,5 @@ $(document).ready(function () {
            }
        });
        return false;
-   });*/
+   });
 });

@@ -53,7 +53,7 @@
         <div class="container">
             <div class="row">
                 <h2 class="text-center">O mnie</h2>
-                <div class="center-ver">
+                <div class="center-ver" id="column-content">
                     <div class="col-xs-12 col-md-6">
                         <div class="text-center">
                             <p>Nazywam się <strong>Jan Wojciech Wernicki</strong>, ale mów mi Wojtek.</p>
@@ -247,7 +247,58 @@
             </div>
         </div>
     </div>
-    <div class="section" id="kontakt"></div>
+    <div class="section" id="kontakt">
+        <div class="parallax">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2 class="text-center">Kontakt</h2>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="col-xs-12 col-md-6">
+                            <h3 class="text-center">Wyślij wiadomość</h3>
+                            <div class="text-center" id="messages">
+                                <div class="message" id="error">Coś się popsuło… Spróbuj wysłać wiadomość jeszcze raz.</div>
+                                <div class="message" id="success">Wiadomość wysłana pomyślnie!</div>
+                            </div>
+                            <form action="sendmail.php" method="post">
+                                <label for="first-name">Imię</label>
+                                <input type="text" name="first-name" id="first-name" placeholder="Imię">
+                                <label for="mail">E-mail</label>
+                                <input type="email" name="mail" id="mail" placeholder="E-mail">
+                                <label for="subject">Temat</label>
+                                <input type="text" name="subject" id="subject" placeholder="Temat">
+                                <label for="message">Wiadomość</label>
+                                <textarea name="message" id="message" placeholder="Wiadomość"></textarea>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary" id="submit">
+                                        <i class="fa fa-paper-plane fa-fw"></i> Wyślij wiadomość
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-xs-12 col-md-6 text-center">
+                            <h3>Social Media</h3>
+                            <div class="center-ver">
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-facebook fa-5x"></i>
+                                    <small>Facebook</small>
+                                </a>                        
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-twitter fa-5x"></i>
+                                    <small>Twitter</small>
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-instagram fa-5x"></i>
+                                    <small>Instagram</small>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
