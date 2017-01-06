@@ -13,12 +13,12 @@ $(document).ready(function () {
         }
     });
     
-    /*$('.portfolio-modal').on("show.bs.modal", function () {
+    $('.portfolio-modal').on("show.bs.modal", function () {
         $('.lazy-load').each(function(){
             var img = $(this);
             img.attr('src', img.data('src'));
         });
-    });*/
+    });
     
     $("#submit").click(function() {
        $.ajax({

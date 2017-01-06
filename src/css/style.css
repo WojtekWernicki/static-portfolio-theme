@@ -159,6 +159,40 @@ h6 small {
   flex-grow: 1;
 }
 
+.modal {
+  color: #212121;
+  padding: 0 !important;
+}
+
+.modal-dialog {
+  margin: 0;
+  width: 100%;
+}
+
+.modal-content {
+  border: none;
+  border-radius: 0;
+  min-height: 100vh;
+  padding-top: 80px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.modal-content img {
+  border: 1px solid #8BC34A;
+  margin-bottom: 20px;
+}
+.modal-content .buttons {
+  margin-top: 20px;
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
 /* 5. IDs */
 #top .parallax {
   background-image: url("../img/triangle.jpg");
@@ -172,7 +206,7 @@ h6 small {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 200px;
+  width: 250px;
 }
 
 #o-mnie {
@@ -247,9 +281,6 @@ h6 small {
 
 #kontakt.section {
   padding: 0px;
-}
-#kontakt .parallax {
-  flex-direction: column;
 }
 #kontakt .parallax a {
   color: #FFFFFF;
@@ -337,6 +368,10 @@ h6 small {
 /* 6. MEDIA QUERIES */
 @media screen and (max-width: 767px) {
   #o-mnie .center-ver#column-content {
+    flex-direction: column;
+  }
+
+  #kontakt .center-ver {
     flex-direction: column;
   }
 }
