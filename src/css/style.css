@@ -92,7 +92,7 @@ h6 small {
 .section {
   background-color: #03A9F4;
   min-height: calc(100vh - 50px);
-  padding-top: 50px;
+  padding: 50px 0;
   color: #FFFFFF;
 }
 
@@ -142,6 +142,23 @@ h6 small {
   padding: 20px;
 }
 
+.flexbox-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+  align-content: center;
+}
+.flexbox-container a {
+  flex-basis: auto;
+  flex-grow: 1;
+}
+
 /* 5. IDs */
 #top .parallax {
   background-image: url("../img/triangle.jpg");
@@ -173,12 +190,8 @@ h6 small {
 }
 #o-mnie a {
   color: #FFFFFF;
-  display: inline-block;
-  margin-right: 50px;
+  margin: 5px 25px;
   text-decoration: none;
-}
-#o-mnie a:last-of-type {
-  margin-right: 0;
 }
 #o-mnie i {
   transition: all 0.75s;
@@ -213,60 +226,71 @@ h6 small {
   flex-direction: row;
 }
 #skill .parallax #languages ul {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+  align-content: center;
   padding-left: 0;
+  text-align: center;
   width: 100%;
 }
 #skill .parallax #languages ul li {
-  display: block;
-  float: left;
-  text-align: center;
-  width: calc(100% / 3);
+  flex-basis: auto;
+  flex-grow: 1;
 }
 
-#kontakt a {
+#kontakt.section {
+  padding: 0px;
+}
+#kontakt .parallax {
+  flex-direction: column;
+}
+#kontakt .parallax a {
   color: #FFFFFF;
-  display: inline-block;
-  margin-right: 50px;
+  margin: 5px 25px;
   text-decoration: none;
 }
-#kontakt a:last-of-type {
-  margin-right: 0;
-}
-#kontakt i {
+#kontakt .parallax i {
   transition: all 0.75s;
 }
-#kontakt i:hover {
+#kontakt .parallax i:hover {
   color: #212121;
   transform: scale(1.25);
 }
-#kontakt i + small {
+#kontakt .parallax i + small {
   display: block;
   margin-top: 10px;
 }
-#kontakt #messages .message {
+#kontakt .parallax #messages .message {
   padding: 20px;
   display: none;
 }
-#kontakt #messages #error {
+#kontakt .parallax #messages #error {
   background-color: #F32328;
 }
-#kontakt #messages #success {
+#kontakt .parallax #messages #success {
   background-color: #8BC34A;
 }
-#kontakt form {
+#kontakt .parallax form {
   background-color: rgba(139, 195, 74, 0.5);
   color: #212121;
   padding: 20px;
   margin: 0 auto;
 }
-#kontakt form label, #kontakt form input, #kontakt form textarea {
+#kontakt .parallax form label, #kontakt .parallax form input, #kontakt .parallax form textarea {
   display: block;
   font-family: 'Open Sans', sans-serif;
 }
-#kontakt form label {
+#kontakt .parallax form label {
   padding: 0 0 5px 10px;
 }
-#kontakt form input, #kontakt form textarea {
+#kontakt .parallax form input, #kontakt .parallax form textarea {
   border-top: none;
   border-bottom: 2px solid #212121;
   border-left: none;
@@ -284,11 +308,30 @@ h6 small {
   -ms-transition: all 0.3s;
   transition: all 0.3s;
 }
-#kontakt form input:focus, #kontakt form textarea:focus {
+#kontakt .parallax form input:focus, #kontakt .parallax form textarea:focus {
   border-bottom: 2px solid #8BC34A;
 }
-#kontakt form textarea {
+#kontakt .parallax form textarea {
   resize: none;
+}
+#kontakt footer {
+  background-color: #0288D1;
+  height: 50px;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+#kontakt footer #cookies {
+  font-size: 10px;
+  line-height: 20px;
+}
+#kontakt footer #copy {
+  font-size: 15px;
+  line-height: 15px;
+}
+#kontakt footer #copy a, #kontakt footer #copy a:hover {
+  color: #FFFFFF;
+  text-decoration: none;
 }
 
 /* 6. MEDIA QUERIES */

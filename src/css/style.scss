@@ -36,6 +36,20 @@
     flex-direction: $val;
 }
 
+@mixin flexbox-container($child) {
+    @include flexbox();
+    @include flexbox-direction(row);
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    align-content: center;
+    
+    #{$child} {
+        flex-basis: auto;
+        flex-grow: 1;
+    }
+}
+
 /* 2. VARIABLES */
 
 $font: 'Lato', sans-serif;
@@ -102,7 +116,7 @@ body {
 .section {
     background-color: $primary-color;
     min-height: calc(100vh - 50px);
-    padding-top: 50px;
+    padding: 50px 0;
     color: $primary-color-text;
 }
 
@@ -141,6 +155,10 @@ body {
     padding: 20px;
 }
 
+.flexbox-container {
+    @include flexbox-container(a);
+}
+
 /* 5. IDs */
 
 #top .parallax {
@@ -169,13 +187,8 @@ body {
     
     a {
         color: $primary-color-text;
-        display: inline-block;
-        margin-right: 50px;
+        margin: 5px 25px;
         text-decoration: none;
-        
-        &:last-of-type {
-            margin-right: 0;
-        }
     }
     
     i {
@@ -213,101 +226,119 @@ body {
         @include flexbox-direction(row);
         
         ul {
+            @include flexbox-container(li);
             padding-left: 0;
+            text-align: center;
             width: 100%;
-            
-            li {
-                display: block;
-                float: left;
-                text-align: center;
-                width: calc(100% / 3);
-            }
         }
     }
 }
 
 #kontakt {
-    a {
-        color: $primary-color-text;
-        display: inline-block;
-        margin-right: 50px;
-        text-decoration: none;
-        
-        &:last-of-type {
-            margin-right: 0;
-        }
+    &.section {
+        padding: 0px;
     }
     
-    i {
-        transition: all 0.75s;
+    .parallax {
+        @include flexbox-direction(column);
         
-        &:hover {
-            color: $primary-text-color;
-            transform: scale(1.25);            
-        }
-    }
-    
-    i + small {
-        display: block;
-        margin-top: 10px;
-    }
-    
-    #messages {
-        .message {
-            padding: 20px;
-            display: none;
-        }
-        
-        #error {
-            background-color: $red;
+        a {
+            color: $primary-color-text;
+            margin: 5px 25px;
+            text-decoration: none;
         }
 
-        #success {
-            background-color: $accent-color;
-        }
-    }
-    
-    form {
-        background-color: rgba($accent-color, 0.5);
-        color: $primary-text-color;
-        padding: 20px;
-        margin: 0 auto;
-        
-        label, input, textarea {
-            display: block;
-            font-family: 'Open Sans', sans-serif;
-        }
+        i {
+            transition: all 0.75s;
 
-        label {
-            padding: 0 0 5px 10px;
-        }
-
-        input, textarea {
-            border-top: none;
-            border-bottom: 2px solid $primary-text-color;
-            border-left: none;
-            border-right: none;
-            background: rgba(0, 0, 0, 0.05);
-            font-size: 16px;
-            line-height: 150%;
-            margin-bottom: 10px;
-            outline: none;
-            padding: 10px;
-            width: 100%;
-
-            -webkit-transition: all 0.3s;
-            -moz-transition: all 0.3s;
-            -o-transition: all 0.3s;
-            -ms-transition: all 0.3s;
-            transition: all 0.3s;
-
-            &:focus {
-                border-bottom: 2px solid $accent-color;
+            &:hover {
+                color: $primary-text-color;
+                transform: scale(1.25);            
             }
         }
 
-        textarea {
-            resize: none;
+        i + small {
+            display: block;
+            margin-top: 10px;
+        }
+
+        #messages {
+            .message {
+                padding: 20px;
+                display: none;
+            }
+
+            #error {
+                background-color: $red;
+            }
+
+            #success {
+                background-color: $accent-color;
+            }
+        }
+
+        form {
+            background-color: rgba($accent-color, 0.5);
+            color: $primary-text-color;
+            padding: 20px;
+            margin: 0 auto;
+
+            label, input, textarea {
+                display: block;
+                font-family: 'Open Sans', sans-serif;
+            }
+
+            label {
+                padding: 0 0 5px 10px;
+            }
+
+            input, textarea {
+                border-top: none;
+                border-bottom: 2px solid $primary-text-color;
+                border-left: none;
+                border-right: none;
+                background: rgba(0, 0, 0, 0.05);
+                font-size: 16px;
+                line-height: 150%;
+                margin-bottom: 10px;
+                outline: none;
+                padding: 10px;
+                width: 100%;
+
+                -webkit-transition: all 0.3s;
+                -moz-transition: all 0.3s;
+                -o-transition: all 0.3s;
+                -ms-transition: all 0.3s;
+                transition: all 0.3s;
+
+                &:focus {
+                    border-bottom: 2px solid $accent-color;
+                }
+            }
+
+            textarea {
+                resize: none;
+            }
+        }
+    }
+    
+    footer {
+        background-color: $primary-color-dark;
+        height: 50px;
+        padding: 10px 0;
+        text-align: center;
+        width: 100%;
+        
+        #cookies {
+            font-size: 10px;
+            line-height: 20px;
+        }
+        
+        #copy {
+            @include anchor-color($primary-color-text);
+            
+            font-size: 15px;
+            line-height: 15px;
         }
     }
 }
