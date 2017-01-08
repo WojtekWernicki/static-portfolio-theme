@@ -49,24 +49,29 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-9">
+                <h1 class="text-center">Kontakt</h1>
                 <section>
-                    <article>
-                        <h1 class="text-center">
-                            Lorem ipsum dolor sit <br>
-                            <small>7 stycznia 2017 | <a href="javascript:void(0)">Kategoria 1</a></small>
-                        </h1>
-                        
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at purus fringilla, vestibulum metus suscipit, auctor ipsum. Donec in accumsan tortor. Praesent a arcu molestie, hendrerit magna id, rutrum nulla. Pellentesque venenatis varius ante, et pharetra libero scelerisque ut. Nam auctor sapien sit amet congue gravida. Proin in enim dapibus, porttitor erat ac, finibus justo. Aenean quis massa efficitur, dictum arcu at, sodales velit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sem libero, fermentum id risus quis, fringilla lobortis urna.</p>
-
-                        <p id="more">Aliquam vitae tellus nec tortor dignissim pellentesque ut vitae tellus. Proin ullamcorper, nisi vel ullamcorper semper, dolor purus tincidunt leo, vitae eleifend ante mi at sapien. Morbi eu magna a tortor vehicula molestie. In molestie, sapien ut ultricies laoreet, nibh turpis viverra est, vel vehicula tortor neque pulvinar ante. Pellentesque eget dui at elit commodo gravida. Etiam in est in nunc lacinia cursus. Quisque tellus justo, efficitur ullamcorper condimentum eu, pulvinar vel tellus. Ut metus mauris, placerat vehicula orci vulputate, tempor efficitur velit. Morbi dolor ex, rutrum vel tellus quis, consequat tincidunt lacus.</p>
-                        
-                        <img src="https://unsplash.it/1920/1080" alt="" class="img-responsive">
-
-                        <p>Nullam varius risus vitae gravida maximus. Fusce non pulvinar ante. Ut pellentesque pharetra lacus sit amet pellentesque. Sed ligula sapien, malesuada vitae lacus ornare, dignissim dignissim ante. Sed aliquam dolor quis hendrerit egestas. Aliquam nisi elit, vehicula suscipit massa ut, suscipit luctus risus. Donec in laoreet tortor, non gravida dui. Praesent non lobortis diam. Cras cursus tellus ac libero pellentesque tincidunt. In diam augue, iaculis et magna et, pretium ullamcorper sem. Nulla ullamcorper pellentesque ipsum, eget facilisis nisi viverra ut. Etiam placerat tincidunt eleifend. Aenean magna tellus, rutrum eu bibendum eget, elementum vitae purus. Duis id bibendum nisi. Nullam luctus ipsum ex, ac maximus ante fermentum nec.</p>
-
-                        <p>Integer lacinia neque enim, quis scelerisque risus finibus sed. Praesent nisl sem, vulputate ut tempor nec, pharetra tincidunt nisl. Morbi eleifend tempus mauris, sit amet molestie elit rutrum vel. Aliquam mauris mi, lobortis sollicitudin aliquam non, vehicula a urna. Pellentesque tincidunt mi vitae orci auctor, at faucibus orci dapibus. In vulputate justo sem, ut laoreet turpis venenatis ac. Suspendisse ut nisl ligula. Cras commodo nunc eu mollis accumsan. Phasellus libero sem, commodo in quam a, mattis fermentum lacus. Pellentesque molestie, arcu non tempus tincidunt, massa diam sollicitudin leo, quis egestas mauris mi sit amet erat. Donec in arcu interdum, scelerisque ante quis, semper leo. Sed ullamcorper turpis urna, vel volutpat erat lobortis ac.</p>
-
-                        <p>Fusce consectetur viverra sem, laoreet dapibus purus lobortis sed. Morbi varius feugiat tellus porttitor placerat. Donec viverra euismod velit, vitae faucibus ligula posuere sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris non sem eget erat tempor aliquam. Nullam ac justo vel urna semper efficitur. Maecenas laoreet nibh quis libero finibus pellentesque. Nam lorem lacus, ultrices rhoncus massa eget, fermentum suscipit odio. Nunc justo nisl, sodales eget ornare eget, imperdiet sed sapien. Maecenas vel risus sed arcu feugiat ornare. Suspendisse finibus arcu non auctor pulvinar. Mauris et maximus urna. In auctor nunc nibh, et tempus neque efficitur id. Nullam in viverra arcu, nec fermentum nulla. Integer euismod ligula at odio facilisis rutrum. Sed dui ligula, aliquam quis urna eget, porttitor dignissim sapien.</p>
+                    <article class="form">
+                        <h3 class="text-center">Wyślij wiadomość</h3>
+                        <div class="text-center" id="messages">
+                            <div class="message" id="error">Coś się popsuło… Spróbuj wysłać wiadomość jeszcze raz.</div>
+                            <div class="message" id="success">Wiadomość wysłana pomyślnie!</div>
+                        </div>
+                        <form action="sendmail.php" method="post">
+                            <label for="first-name">Imię</label>
+                            <input type="text" name="first-name" id="first-name" placeholder="Imię">
+                            <label for="mail">E-mail</label>
+                            <input type="email" name="mail" id="mail" placeholder="E-mail">
+                            <label for="subject">Temat</label>
+                            <input type="text" name="subject" id="subject" placeholder="Temat">
+                            <label for="message">Wiadomość</label>
+                            <textarea name="message" id="message" placeholder="Wiadomość"></textarea>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary" id="submit">
+                                    <i class="fa fa-paper-plane fa-fw"></i> Wyślij wiadomość
+                                </button>
+                            </div>
+                        </form>
                     </article>
                 </section>
             </div>
@@ -116,5 +121,6 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="src/js/script.js"></script>
 </body>
 </html>

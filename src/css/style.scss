@@ -108,6 +108,65 @@ footer {
     }
 }
 
+#kontakt form, .form form {
+    background-color: rgba($accent-color, 0.5);
+    color: $primary-text-color;
+    padding: 20px;
+    margin: 0 auto;
+
+    label, input, textarea {
+        display: block;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    label {
+        padding: 0 0 5px 10px;
+    }
+
+    input, textarea {
+        border-top: none;
+        border-bottom: 2px solid $primary-text-color;
+        border-left: none;
+        border-right: none;
+        background: rgba(0, 0, 0, 0.05);
+        font-size: 16px;
+        line-height: 150%;
+        margin-bottom: 10px;
+        outline: none;
+        padding: 10px;
+        width: 100%;
+
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        transition: all 0.3s;
+
+        &:focus {
+            border-bottom: 2px solid $accent-color;
+        }
+    }
+
+    textarea {
+        resize: none;
+    }
+}
+
+#kontakt #messages, .form #messages {
+    .message {
+        padding: 20px;
+        display: none;
+    }
+
+    #error {
+        background-color: $red;
+    }
+
+    #success {
+        background-color: $accent-color;
+    }
+}
+
 @for $i from 1 through 6 {
     h#{$i} {        
         font-family: 'Ubuntu', sans-serif;
@@ -166,6 +225,46 @@ footer {
         border-bottom: none;
         padding-bottom: 0;
         margin-bottom: 20px;
+    }
+    
+    &.page {
+        margin-bottom: 20px;
+    }
+}
+
+.form {
+    min-height: 50vh;
+}
+
+.widget-section {
+    @include flexbox();    
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.widget {
+    margin-bottom: 20px;
+}
+
+.portfolio-container {
+    @include flexbox();
+    @include flexbox-direction(row);
+    
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    article {
+        border: 2px solid $accent-color;
+        margin: 10px;
+        padding: 10px;
+        
+        img {
+            margin-top: 0;
+        }
+        
+        &:last-of-type {
+            border-bottom: 2px solid $accent-color;
+        }
     }
 }
 
@@ -351,65 +450,6 @@ footer {
             display: block;
             margin-top: 10px;
         }
-
-        #messages {
-            .message {
-                padding: 20px;
-                display: none;
-            }
-
-            #error {
-                background-color: $red;
-            }
-
-            #success {
-                background-color: $accent-color;
-            }
-        }
-
-        form {
-            background-color: rgba($accent-color, 0.5);
-            color: $primary-text-color;
-            padding: 20px;
-            margin: 0 auto;
-
-            label, input, textarea {
-                display: block;
-                font-family: 'Open Sans', sans-serif;
-            }
-
-            label {
-                padding: 0 0 5px 10px;
-            }
-
-            input, textarea {
-                border-top: none;
-                border-bottom: 2px solid $primary-text-color;
-                border-left: none;
-                border-right: none;
-                background: rgba(0, 0, 0, 0.05);
-                font-size: 16px;
-                line-height: 150%;
-                margin-bottom: 10px;
-                outline: none;
-                padding: 10px;
-                width: 100%;
-
-                -webkit-transition: all 0.3s;
-                -moz-transition: all 0.3s;
-                -o-transition: all 0.3s;
-                -ms-transition: all 0.3s;
-                transition: all 0.3s;
-
-                &:focus {
-                    border-bottom: 2px solid $accent-color;
-                }
-            }
-
-            textarea {
-                resize: none;
-            }
-        }
     }
     
     footer {
@@ -445,6 +485,38 @@ footer {
     #kontakt {
         .center-ver {
             @include flexbox-direction(column);
+        }
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .widget-section {
+        @include flexbox-direction(column);
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 991px) {
+    .widget-section {
+        @include flexbox-direction(row);
+        
+        .widget {
+            flex-basis: 50%;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .portfolio-container {
+        article {
+            flex-basis: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .portfolio-container {
+        article {
+            flex-basis: calc(100% / 2 - 20px);
         }
     }
 }

@@ -56,6 +56,55 @@ footer #copy a, footer #copy a:hover {
   text-decoration: none;
 }
 
+#kontakt form, .form form {
+  background-color: rgba(139, 195, 74, 0.5);
+  color: #212121;
+  padding: 20px;
+  margin: 0 auto;
+}
+#kontakt form label, #kontakt form input, #kontakt form textarea, .form form label, .form form input, .form form textarea {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+}
+#kontakt form label, .form form label {
+  padding: 0 0 5px 10px;
+}
+#kontakt form input, #kontakt form textarea, .form form input, .form form textarea {
+  border-top: none;
+  border-bottom: 2px solid #212121;
+  border-left: none;
+  border-right: none;
+  background: rgba(0, 0, 0, 0.05);
+  font-size: 16px;
+  line-height: 150%;
+  margin-bottom: 10px;
+  outline: none;
+  padding: 10px;
+  width: 100%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#kontakt form input:focus, #kontakt form textarea:focus, .form form input:focus, .form form textarea:focus {
+  border-bottom: 2px solid #8BC34A;
+}
+#kontakt form textarea, .form form textarea {
+  resize: none;
+}
+
+#kontakt #messages .message, .form #messages .message {
+  padding: 20px;
+  display: none;
+}
+#kontakt #messages #error, .form #messages #error {
+  background-color: #F32328;
+}
+#kontakt #messages #success, .form #messages #success {
+  background-color: #8BC34A;
+}
+
 h1 {
   font-family: 'Ubuntu', sans-serif;
   margin-bottom: 25px;
@@ -142,6 +191,49 @@ h6 small {
   border-bottom: none;
   padding-bottom: 0;
   margin-bottom: 20px;
+}
+.page-header.page {
+  margin-bottom: 20px;
+}
+
+.form {
+  min-height: 50vh;
+}
+
+.widget-section {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.widget {
+  margin-bottom: 20px;
+}
+
+.portfolio-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.portfolio-container article {
+  border: 2px solid #8BC34A;
+  margin: 10px;
+  padding: 10px;
+}
+.portfolio-container article img {
+  margin-top: 0;
+}
+.portfolio-container article:last-of-type {
+  border-bottom: 2px solid #8BC34A;
 }
 
 .section {
@@ -353,53 +445,6 @@ h6 small {
   display: block;
   margin-top: 10px;
 }
-#kontakt .parallax #messages .message {
-  padding: 20px;
-  display: none;
-}
-#kontakt .parallax #messages #error {
-  background-color: #F32328;
-}
-#kontakt .parallax #messages #success {
-  background-color: #8BC34A;
-}
-#kontakt .parallax form {
-  background-color: rgba(139, 195, 74, 0.5);
-  color: #212121;
-  padding: 20px;
-  margin: 0 auto;
-}
-#kontakt .parallax form label, #kontakt .parallax form input, #kontakt .parallax form textarea {
-  display: block;
-  font-family: 'Open Sans', sans-serif;
-}
-#kontakt .parallax form label {
-  padding: 0 0 5px 10px;
-}
-#kontakt .parallax form input, #kontakt .parallax form textarea {
-  border-top: none;
-  border-bottom: 2px solid #212121;
-  border-left: none;
-  border-right: none;
-  background: rgba(0, 0, 0, 0.05);
-  font-size: 16px;
-  line-height: 150%;
-  margin-bottom: 10px;
-  outline: none;
-  padding: 10px;
-  width: 100%;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  transition: all 0.3s;
-}
-#kontakt .parallax form input:focus, #kontakt .parallax form textarea:focus {
-  border-bottom: 2px solid #8BC34A;
-}
-#kontakt .parallax form textarea {
-  resize: none;
-}
 #kontakt footer {
   background-color: #0288D1;
   height: 50px;
@@ -428,6 +473,29 @@ h6 small {
 
   #kontakt .center-ver {
     flex-direction: column;
+  }
+}
+@media screen and (max-width: 499px) {
+  .widget-section {
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 991px) {
+  .widget-section {
+    flex-direction: row;
+  }
+  .widget-section .widget {
+    flex-basis: 50%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .portfolio-container article {
+    flex-basis: 100%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .portfolio-container article {
+    flex-basis: calc(100% / 2 - 20px);
   }
 }
 
