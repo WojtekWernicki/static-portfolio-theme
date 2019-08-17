@@ -29,6 +29,9 @@ module.exports = function (grunt) {
             }
         },
         cssmin: {
+            options: {
+                processImport: false
+            },
             build: {
                 files: {
                     'dist/css/style.min.css': 'src/css/style.css'
@@ -46,12 +49,12 @@ module.exports = function (grunt) {
             }
         }
     });
-    
+
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    
+
     grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'sass']);
 };

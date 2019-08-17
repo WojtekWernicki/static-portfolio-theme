@@ -13,6 +13,8 @@ body {
   font-family: "Lato", sans-serif;
   font-size: 1rem;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 section {
@@ -64,7 +66,7 @@ footer #copy a, footer #copy a:hover {
 }
 #kontakt form label, #kontakt form input, #kontakt form textarea, .form form label, .form form input, .form form textarea {
   display: block;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 #kontakt form label, .form form label {
   padding: 0 0 5px 10px;
@@ -106,7 +108,7 @@ footer #copy a, footer #copy a:hover {
 }
 
 h1 {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   margin-bottom: 25px;
 }
 h1 small {
@@ -114,7 +116,7 @@ h1 small {
 }
 
 h2 {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   margin-bottom: 25px;
 }
 h2 small {
@@ -122,7 +124,7 @@ h2 small {
 }
 
 h3 {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   margin-bottom: 25px;
 }
 h3 small {
@@ -130,7 +132,7 @@ h3 small {
 }
 
 h4 {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   margin-bottom: 25px;
 }
 h4 small {
@@ -138,7 +140,7 @@ h4 small {
 }
 
 h5 {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   margin-bottom: 25px;
 }
 h5 small {
@@ -146,7 +148,7 @@ h5 small {
 }
 
 h6 {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   margin-bottom: 25px;
 }
 h6 small {
@@ -234,6 +236,10 @@ h6 small {
 }
 .portfolio-container article:last-of-type {
   border-bottom: 2px solid #8BC34A;
+}
+
+.container {
+  flex: 1;
 }
 
 .section {

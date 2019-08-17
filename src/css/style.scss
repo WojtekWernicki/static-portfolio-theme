@@ -43,7 +43,7 @@
     justify-content: space-around;
     align-items: flex-end;
     align-content: center;
-    
+
     #{$child} {
         flex-basis: auto;
         flex-grow: 1;
@@ -66,21 +66,23 @@ body {
     font-family: $font;
     font-size: 1rem;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 section {
     @include flexbox();
     @include flexbox-direction(column);
-    
+
     article {
         border-bottom: 2px solid $accent-color;
         margin-bottom: 20px;
         padding-bottom: 20px;
-        
+
         &:last-of-type {
             border-bottom: none;
         }
-        
+
         img {
             margin: 20px 0;
         }
@@ -168,10 +170,10 @@ footer {
 }
 
 @for $i from 1 through 6 {
-    h#{$i} {        
+    h#{$i} {
         font-family: 'Ubuntu', sans-serif;
         margin-bottom: 25px;
-        
+
         small {
             color: inherit;
         }
@@ -184,28 +186,28 @@ footer {
     border: none;
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12), 0px 3px 1px -2px rgba(0, 0, 0, 0.2);
     border-radius: 0;
-    
+
     &.navbar-default {
         background-color: $primary-color-dark;
         margin-bottom: 0;
-        
+
         .navbar-brand {
             color: $primary-color-text;
             cursor: default;
         }
-        
+
         .navbar-toggle {
             border: 1px solid $divider-color;
-            
+
             .icon-bar {
                 background-color: $primary-color-text;
             }
-            
+
             &:hover {
                 background-color: $divider-color;
             }
         }
-        
+
         .navbar-nav {
             > li {
                 @include anchor-color($primary-color-text);
@@ -216,17 +218,17 @@ footer {
 
 .page-header {
     margin: 0;
-    
+
     h1 {
         margin-bottom: 20px;
     }
-    
+
     &.image-header {
         border-bottom: none;
         padding-bottom: 0;
         margin-bottom: 20px;
     }
-    
+
     &.page {
         margin-bottom: 20px;
     }
@@ -237,7 +239,7 @@ footer {
 }
 
 .widget-section {
-    @include flexbox();    
+    @include flexbox();
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -249,23 +251,27 @@ footer {
 .portfolio-container {
     @include flexbox();
     @include flexbox-direction(row);
-    
+
     flex-wrap: wrap;
     justify-content: space-around;
-    
+
     article {
         border: 2px solid $accent-color;
         margin: 10px;
         padding: 10px;
-        
+
         img {
             margin-top: 0;
         }
-        
+
         &:last-of-type {
             border-bottom: 2px solid $accent-color;
         }
     }
+}
+
+.container {
+    flex: 1;
 }
 
 .section {
@@ -295,9 +301,9 @@ footer {
     background-color: $divider-color;
     margin-bottom: 30px;
     padding: 10px;
-    
+
     @include anchor-color($primary-text-color);
-    
+
     img {
         width: 100%;
     }
@@ -331,12 +337,12 @@ footer {
     padding-top: 80px;
     padding-bottom: 20px;
     position: relative;
-    
+
     img {
         border: 1px solid $accent-color;
         margin-bottom: 20px;
     }
-    
+
     .buttons {
         margin-top: 20px;
     }
@@ -355,7 +361,7 @@ footer {
 #top .parallax {
     background-image: url('../img/triangle.jpg');
     @include flexbox-direction(column);
-    
+
     img {
         @include border-radius-all(50%);
         border: 5px solid $accent-color;
@@ -369,28 +375,28 @@ footer {
 #o-mnie {
     @include flexbox();
     @include flexbox-center-hor-ver();
-        
+
     line-height: 1.25rem;
-    
+
     ul li {
         margin-bottom: 1.5rem;
     }
-    
+
     a {
         color: $primary-color-text;
         margin: 5px 25px;
         text-decoration: none;
     }
-    
+
     i {
         transition: all 0.75s;
-        
+
         &:hover {
             color: $primary-text-color;
-            transform: scale(1.25);            
+            transform: scale(1.25);
         }
     }
-    
+
     i + small {
         display: block;
         margin-top: 10px;
@@ -409,13 +415,13 @@ footer {
 
 #skill .parallax {
     @include flexbox-direction(column);
-    
+
     background-image: url('../img/computer.jpg');
-    
+
     #languages {
         @include flexbox();
         @include flexbox-direction(row);
-        
+
         ul {
             @include flexbox-container(li);
             padding-left: 0;
@@ -425,12 +431,12 @@ footer {
     }
 }
 
-#kontakt {    
+#kontakt {
     &.section {
         padding: 0px;
     }
-    
-    .parallax {        
+
+    .parallax {
         a {
             color: $primary-color-text;
             margin: 5px 25px;
@@ -442,7 +448,7 @@ footer {
 
             &:hover {
                 color: $primary-text-color;
-                transform: scale(1.25);            
+                transform: scale(1.25);
             }
         }
 
@@ -451,22 +457,22 @@ footer {
             margin-top: 10px;
         }
     }
-    
+
     footer {
         background-color: $primary-color-dark;
         height: 50px;
         padding: 10px 0;
         text-align: center;
         width: 100%;
-        
+
         #cookies {
             font-size: 10px;
             line-height: 20px;
         }
-        
+
         #copy {
             @include anchor-color($primary-color-text);
-            
+
             font-size: 15px;
             line-height: 15px;
         }
@@ -481,7 +487,7 @@ footer {
             @include flexbox-direction(column);
         }
     }
-    
+
     #kontakt {
         .center-ver {
             @include flexbox-direction(column);
@@ -498,7 +504,7 @@ footer {
 @media screen and (min-width: 500px) and (max-width: 991px) {
     .widget-section {
         @include flexbox-direction(row);
-        
+
         .widget {
             flex-basis: 50%;
         }

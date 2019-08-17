@@ -8,4 +8,3 @@ Check also:
 
 - [DEMO](https://wojtekwernicki.github.io/static-portfolio-theme/index.html)
 - [LICENSE](LICENSE)
-- [My #100DaysOfCode](https://github.com/WojtekWernicki/100-days-of-code)
